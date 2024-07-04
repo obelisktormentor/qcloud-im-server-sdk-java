@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 创建群组之前回调
@@ -47,7 +48,7 @@ public class BeforeCreateGroupCallback implements Serializable {
      * 该用户已创建的同类的群组个数
      */
     @JsonProperty("CreatedGroupNum")
-    private Integer createdGroupNum;
+    private Map<String, Integer> createdGroupNum;
 
     /**
      * 请求创建的群组的初始化成员列表
@@ -101,11 +102,11 @@ public class BeforeCreateGroupCallback implements Serializable {
         this.name = name;
     }
 
-    public Integer getCreatedGroupNum() {
+    public Map<String, Integer> getCreatedGroupNum() {
         return createdGroupNum;
     }
 
-    public void setCreatedGroupNum(Integer createdGroupNum) {
+    public void setCreatedGroupNum(Map<String, Integer> createdGroupNum) {
         this.createdGroupNum = createdGroupNum;
     }
 
